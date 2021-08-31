@@ -4,6 +4,11 @@ This repository contains the jupyter notebooks to train an Object Detection Conv
 
 ## Important Notes
 
+- It is recommended to first set up a virtual environment:
+```bash
+$ python3 -m venv env
+```
+
 - This repo contains `train.ipynb` and `train_torch.ipynb`. `train.ipynb` is a training program written using **TensorFlow** and has memory leak issues, thus it is abandoned in favour of the **PyTorch** version. Please **do not use `train.ipynb`.**
 
 - This repo contains `dataloader.py` and `rm.py`. This contains a data generator function as well as preprocessing code for the **ImageNet dataset**. It is **strongly recommended** to write your own data generator. Be sure that it `yield (torch.tensor, torch.tensor)`, which corresponds to (X, Y) training pair. By default, the network expects input tensors of shape `(batch_size, 416, 416, 3)`
